@@ -2,7 +2,7 @@
   "name": "react-apply-darkmode",
   "version": "1.0.0",
   "description": "Apply dark mode interpolation to your React app with zero manual theming.",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "npm run jest"
   },
@@ -22,7 +22,7 @@
     "url": "https://github.com/valisoftpdx/react-apply-darkmode/issues"
   },
   "homepage": "https://github.com/valisoftpdx/react-apply-darkmode#readme",
-  "dependencies": {
+  "peerDependencies": {
     "darkreader": "^4.9.21"
   }
 }
