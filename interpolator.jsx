@@ -27,7 +27,11 @@ export default function Interpolator({
   }, [mq]);
 
   const filterProps = filter ? filter : defaultFilter;
-  const {brightness, contrast, sepia} = filterProps;
+  const {
+    brightness = defaultFilter.brightness,
+    contrast = defaultFilter.contrast,
+    sepia = defaultFilter.sepia
+  } = filterProps;
 
   if (
     (watchSystem && watchIsDark) ||
