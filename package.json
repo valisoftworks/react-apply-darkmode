@@ -1,0 +1,28 @@
+{
+  "name": "react-apply-darkmode",
+  "version": "1.0.0",
+  "description": "Apply dark mode interpolation to your React app with zero manual theming.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm run jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valisoftpdx/react-apply-darkmode.git"
+  },
+  "keywords": [
+    "react",
+    "darkreader",
+    "dark-theme",
+    "dark-mode"
+  ],
+  "author": "Victor Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valisoftpdx/react-apply-darkmode/issues"
+  },
+  "homepage": "https://github.com/valisoftpdx/react-apply-darkmode#readme",
+  "dependencies": {
+    "darkreader": "^4.9.21"
+  }
+}
