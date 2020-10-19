@@ -9,7 +9,7 @@ const defaultFilter = {
 };
 
 export default function Interpolator({
-  defaultMode = 'light',
+  appearance,
   watchSystem = false,
   filter,
   children
@@ -33,14 +33,11 @@ export default function Interpolator({
     sepia = defaultFilter.sepia
   } = filterProps;
 
-  if (
-    (watchSystem && watchIsDark) ||
-    (!watchSystem && defaultMode === 'dark')
-  ) {
+  if ((watchSystem && watchIsDark) || (!watchSystem && appearance === 'dark')) {
     enableDarkMode({brightness, contrast, sepia});
   } else if (
     (watchSystem && !watchIsDark) ||
-    (!watchSystem && defaultMode !== 'dark')
+    (!watchSystem && appearance !== 'dark')
   ) {
     disableDarkMode();
   }
@@ -49,7 +46,7 @@ export default function Interpolator({
 }
 
 Interpolator.propTypes = {
-  defaultMode: PropTypes.string,
+  appearance: PropTypes.string,
   watchSystem: PropTypes.bool,
   filter: PropTypes.shape({
     brightness: PropTypes.number,
