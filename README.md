@@ -1,8 +1,8 @@
 # react-apply-darkmode
 
-Apply dark mode with
-[@darkreader/darkreader](https://github.com/darkreader/darkreader) directly to
-your React app; no manual theming required!
+Apply dark mode directly to your React app with
+[@darkreader/darkreader](https://github.com/darkreader/darkreader) ; no manual
+theming required!
 
 ## Installation
 
@@ -48,11 +48,11 @@ export default function App() {
 
 ## Props
 
-| Prop        | Values                                                  | Purpose                                                                                                                  |
-| ----------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| defaultMode | `'dark'                                                 | 'light'                                                                                                                  | undefined` | The default theme of your site. A default will not be set if `defaultMode` is `undefined`. |
-| watchSystem | `true                                                   | false`                                                                                                                   | Apply dark mode based on the device's color scheme (MacOS and Windows 10 only). This will override `defaultMode` if defined. |
-| filter      | `{brightness: number, contrast: number, sepia: number}` | A color filter that will be applied when dark mode is enabled. You can supply any number of these values or none at all. |
+| Prop        | Values                                                  | Purpose                                                                                                                      |
+| ----------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| defaultMode | `'dark'`, `'light'`, or `undefined`                     | The default theme of your site. A default will not be set if `defaultMode` is `undefined`.                                   |
+| watchSystem | `true` or `false`                                       | Apply dark mode based on the device's color scheme (MacOS and Windows 10 only). This will override `defaultMode` if defined. |
+| filter      | `{brightness: number, contrast: number, sepia: number}` | A color filter that will be applied when dark mode is enabled. You can supply any number of these values or none at all.     |
 
 ## Tips
 
