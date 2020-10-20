@@ -1,0 +1,30 @@
+{
+  "name": "react-apply-darkmode",
+  "version": "1.0.0",
+  "description": "Apply dark mode to your React app with zero manual theming.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valisoftworks/react-apply-darkmode.git"
+  },
+  "keywords": [
+    "react",
+    "darkreader",
+    "dark-theme",
+    "dark-mode",
+    "react-component",
+    "component"
+  ],
+  "author": {
+    "name": "Victor Li",
+    "email": "victorli08@outlook.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valisoftworks/react-apply-darkmode/issues"
+  },
+  "homepage": "https://github.com/valisoftworks/react-apply-darkmode#readme",
+  "dependencies": {
+    "darkreader": "^4.9.21"
+  }
+}
