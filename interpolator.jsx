@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import {enable as enableDarkMode, disable as disableDarkMode} from 'darkreader';
 
@@ -42,7 +42,7 @@ export default function Interpolator({
     disableDarkMode();
   }
 
-  return <>{children}</>;
+  return children;
 }
 
 Interpolator.propTypes = {
