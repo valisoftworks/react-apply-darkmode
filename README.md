@@ -52,8 +52,11 @@ export default function App() {
   `wrapRootElement` if using Gatsby. This will ensure that dark mode is ready
   before your components render, preventing undesirable flashes.
 
-  You will only need to define `wrapRootElement` for Gatsby's browser API in
-  `gatsby-browser.js`; you do not need do this in `gatsby-ssr.js`.
+  **IMPORTANT:** If using Gatsby, you only need to define `wrapRootElement` with
+  `Interpolator` for Gatsby's browser API via `gatsby-browser.js`. Don't use
+  `Interpolator` in `gatsby-ssr.js` or anywhere lower in the DOM tree; Dark
+  Reader depends on `window` and `document` which are unavailable during SSR
+  prerendering (you'll get build errors!).
 
 - `watchSystem` relies on the `prefers-color-scheme` CSS media feature, which
   some browsers may not support; privacy settings can also influence the value
