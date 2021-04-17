@@ -1,6 +1,5 @@
 import {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
-import {enable as enableDarkMode, disable as disableDarkMode} from 'darkreader';
 
 const defaultFilter = {
   brightness: 100,
@@ -14,32 +13,41 @@ export default function Interpolator({
   filter,
   children
 }) {
-  const mq = window.matchMedia('(prefers-color-scheme: dark)');
-  const [watchIsDark, setWatchIsDark] = useState(mq.matches);
+  if (window) {
+    const {
+      enable: enableDarkMode,
+      disable: disableDarkMode
+    } = require('darkreader');
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const [watchIsDark, setWatchIsDark] = useState(mq.matches);
 
-  function updateWatch(update) {
-    setWatchIsDark(update.matches);
-  }
+    function updateWatch(update) {
+      setWatchIsDark(update.matches);
+    }
 
-  useEffect(() => {
-    mq.addEventListener('change', updateWatch);
-    return () => mq.removeEventListener('change', updateWatch);
-  }, [mq]);
+    useEffect(() => {
+      mq.addEventListener('change', updateWatch);
+      return () => mq.removeEventListener('change', updateWatch);
+    }, [mq]);
 
-  const filterProps = filter ? filter : defaultFilter;
-  const {
-    brightness = defaultFilter.brightness,
-    contrast = defaultFilter.contrast,
-    sepia = defaultFilter.sepia
-  } = filterProps;
+    const filterProps = filter ? filter : defaultFilter;
+    const {
+      brightness = defaultFilter.brightness,
+      contrast = defaultFilter.contrast,
+      sepia = defaultFilter.sepia
+    } = filterProps;
 
-  if ((watchSystem && watchIsDark) || (!watchSystem && appearance === 'dark')) {
-    enableDarkMode({brightness, contrast, sepia});
-  } else if (
-    (watchSystem && !watchIsDark) ||
-    (!watchSystem && appearance !== 'dark')
-  ) {
-    disableDarkMode();
+    if (
+      (watchSystem && watchIsDark) ||
+      (!watchSystem && appearance === 'dark')
+    ) {
+      enableDarkMode({brightness, contrast, sepia});
+    } else if (
+      (watchSystem && !watchIsDark) ||
+      (!watchSystem && appearance !== 'dark')
+    ) {
+      disableDarkMode();
+    }
   }
 
   return children;
