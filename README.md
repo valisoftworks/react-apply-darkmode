@@ -69,40 +69,46 @@ export default function App() {
 
 ### Persistence
 
-You will need to implement your own wrapper component or container to persist
+You will need to implement your own solution to persist
 dark mode across browser sessions by changing values supplied to the
-`appearance` prop. `localStorage` and `redux` (with `redux-persist`) are both
-good solutions.
+`appearance` prop. 
+
+Setting status as a key-value pair in `localStorage` is most appropriate, although you may elect to incorporate this into your `redux` store.
 
 ### Colors
 
-`react-apply-darkmode` will tone down bright colors and reduce contrast. Don't
-assume that a color is going to work optimally in light and dark mode; always do
-a visual test by switching between both modes!
+`react-apply-darkmode` will tone down bright colors and reduce contrast. 
+
+The extremity of this adjustment can range from subtle to intense; minor changes to the hue can have a large impact on the final result.
+
+Try to stick to subtler filter options to avoid making color-coding bothersome. Sometimes, good enough is good enough!   
 
 ### Images
 
-Maximize transparency of image assets! `react-apply-darkmode` will not invert
-images (to preserve your sanity), so make sure your images have transparent
-backgrounds and transparency where color isn't needed.
+Maximize transparency of image assets! For the most part, `react-apply-darkmode` will not invert
+images. 
 
-Also, try to use colors that have good contrast in both light and dark mode.
+Make sure your images have transparent
+backgrounds and transparency where color isn't absolutely needed, especially for logos.
 
 ### Theming Conflicts
 
-Don't use another dark mode theming solution alongside `react-apply-darkmode`
-(i.e. with React context/providers, CSS classes, or another package). This can
+Try to avoid using another dark mode theming solution alongside `react-apply-darkmode`
+(e.g. with React context/providers, CSS classes, or another package). 
+
+This can
 cause undesirable flickering effects when solutions try to compensate for each
 other's changes.
 
 ### Component Library Issues
 
 Certain UI component libraries don't work well with `react-apply-darkmode`.
-Audit a library before choosing it! Installing the Dark Reader browser extension
+
+Installing the Dark Reader browser extension
 (Chrome or Firefox, for best results) and exploring a component library's site
 will give you a good idea of how well it works.
 
-You can view a list of issue libraries
+You can view a (incomplete) list of issue libraries
 [here](https://github.com/valisoftpdx/react-apply-darkmode/wiki/Issue-Component-Libraries).
 
 ## Credits
@@ -110,7 +116,7 @@ You can view a list of issue libraries
 This package was created by [Victor Li](https://github.com/victorli08), an avid
 and longtime user of the Dark Reader extension.
 
-`react-apply-darkmode` is made possible by open source code from
-[@darkreader](https://github.com/darkreader/darkreader). If you like this
+`react-apply-darkmode` is made possible by the open source
+[@darkreader](https://github.com/darkreader/darkreader) project. If you like this
 package, please give a shoutout to Dark Reader's developers and consider
-sponsoring their project!
+sponsoring them!
